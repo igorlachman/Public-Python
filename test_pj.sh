@@ -27,11 +27,13 @@ BUILD_STATUS='Build|_|simple_flask_app|_|status|_|complete'
 CONT_STATUS='Container|_|simple_flask_app|_|status|_|'$STAT
 LINK='Container|_|simple_flask_app|_|link|_|http://3.17.78.88:3000/'
 
-`curl 'https://api.telegram.org/<bot_id>/sendMessage?chat_id=<channel_id>&text='$UPD_BRANCH >> update_log`
-`curl 'https://api.telegram.org/<bot_id>/sendMessage?chat_id=<channel_id>&text='$BUILD_STATUS >> update_log`
-`curl 'https://api.telegram.org/<bot_id>/sendMessage?chat_id=<channel_id>&text='$CONT_STATUS >> update_log`
-`curl 'https://api.telegram.org/<bot_id>/sendMessage?chat_id=<channel_id>&text='$LINK >> update_log`
+`curl --silent 'https://api.telegram.org/<bot_id>/sendMessage?chat_id=<channel_id>&text='$UPD_BRANCH >> update_log`
+`curl --silent 'https://api.telegram.org/<bot_id>/sendMessage?chat_id=<channel_id>&text='$BUILD_STATUS >> update_log`
+`curl --silent 'https://api.telegram.org/<bot_id>/sendMessage?chat_id=<channel_id>&text='$CONT_STATUS >> update_log`
+`curl --silent 'https://api.telegram.org/<bot_id>/sendMessage?chat_id=<channel_id>&text='$LINK >> update_log`
 
 echo '[Bot sended messages to Telegram channel]'
 echo '[Log File] - [/home/ubuntu/Flask/simple_flask_app/update_log]'
 echo '[----------------------------]'
+echo 'All steps done'
+
