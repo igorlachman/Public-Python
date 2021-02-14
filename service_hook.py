@@ -18,7 +18,7 @@ def api_github_mess():
         branch_name = content.get('ref')
         if 'dev_lachman' in branch_name:
             print('Branch [dev_lachman] updated. Start building a project [simple_flask_app]...')
-            os.system('./testing_project.sh')
+            os.system('./test_pj.sh')
         return json.dumps(request.json)
 
 
